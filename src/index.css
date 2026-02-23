@@ -1,0 +1,274 @@
+/* src/index.css */
+
+/* --- Global Arcade Theme --- */
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace; /* Classic retro font */
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* --- Main Menu Layout --- */
+.arcade-menu {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Neon Title Effect */
+.arcade-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff, 
+    0 0 10px #fff, 
+    0 0 20px #ff00de, 
+    0 0 40px #ff00de, 
+    0 0 80px #ff00de;
+  margin-bottom: 10px;
+}
+
+.about-link {
+  color: #00e5ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.about-link:hover {
+  color: #ff00de;
+  text-shadow: 0 0 8px #ff00de;
+}
+
+/* --- The Game Grid --- */
+.game-grid {
+  display: grid;
+  /* This automatically makes the grid responsive! */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 30px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+/* --- Game Cards --- */
+.game-card {
+  background-color: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.game-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  cursor: pointer;
+}
+
+.game-emoji {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
+}
+
+.game-title {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+ 
+/* --- Tic-Tac-Toe Styling --- */
+.game-status {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tic-tac-toe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.tic-tac-toe-cell {
+  width: 100px;
+  height: 100px;
+  background-color: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Hover effect for empty cells */
+.tic-tac-toe-cell:not(.x):not(.o):hover {
+  background-color: #2a2a2a;
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3) inset;
+}
+
+/* Player X - Neon Cyan */
+.tic-tac-toe-cell.x {
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+  cursor: default;
+}
+
+/* Player O - Neon Magenta */
+.tic-tac-toe-cell.o {
+  color: #ff00de;
+  text-shadow: 0 0 10px #ff00de, 0 0 20px #ff00de;
+  cursor: default;
+}
+
+/* Check if the game is won, make cells non-clickable */
+.game-over .tic-tac-toe-cell:not(.x):not(.o) {
+  cursor: default;
+}
+.game-over .tic-tac-toe-cell:not(.x):not(.o):hover {
+  background-color: #1e1e1e;
+  border-color: #333;
+  box-shadow: none;
+}
+
+/* --- About Page Styling --- */
+.about-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.1); /* Subtle cyan glow */
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #00e5ff; /* Neon Cyan */
+  text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+/* Make the link look like a neon button */
+.back-link {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  color: #ff00de; /* Neon Magenta */
+  text-decoration: none;
+  border: 2px solid #ff00de;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  background-color: #ff00de;
+  color: #121212; /* Dark text on hover */
+  box-shadow: 0 0 15px #ff00de, 0 0 30px #ff00de; /* Intense glow */
+  transform: scale(1.05);
+}
+
+/* --- Pong Styling --- */
+.pong-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pong-score-board {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #fff;
+}
+
+.pong-player-score { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; }
+.pong-cpu-score { color: #ff00de; text-shadow: 0 0 10px #ff00de; }
+
+.pong-board {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-color: #121212;
+  border: 4px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  cursor: none; /* Hides the mouse pointer over the board */
+}
+
+/* The dashed line down the middle */
+.pong-board::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 4px dashed #333;
+  transform: translateX(-50%);
+}
+
+.pong-paddle {
+  position: absolute;
+  width: 10px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.pong-paddle.player {
+  background-color: #00e5ff;
+  left: 20px;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+.pong-paddle.cpu {
+  background-color: #ff00de;
+  right: 20px;
+  box-shadow: 0 0 10px #ff00de;
+}
+
+.pong-ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #fff;
+}
