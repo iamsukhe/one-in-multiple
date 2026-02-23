@@ -2,6 +2,8 @@
 
 A high-performance, retro-neon mini-game platform built with **React + Vite**.
 
+Link to live app: https://one-in-multiple.vercel.app/
+
 ## 🚀 The Tech Stack
 
 - **Framework:** React 18
